@@ -4,12 +4,47 @@
 > git clone git@github.com:vitor-schipani/dotfiles.git
 
 ## Git help:
-Editing remotes:
+Good reference:
+* https://leosiddle.com/posts/2020/07/git-config-pull-rebase-autostash/
 
+### Configs and meta git commands:
+> Set git configurations:
+git config
+> Set git configurations globally:
+git config --global
+
+Obtain logs:
+Complete log:
+> git log
+Summary log:
+> git reflog
+
+### Remotes:
 Views all current remotes:
 > git remote -v #Views all current remotes
 Adds a new remote:
 > git remote add origin <GET SSH LINK FROM GIT>
+
+### Commiting:
+Sync with remote repo:
+> git pull
+
+Get status of staged changes:
+> git status
+
+Add files:
+> git add <FILES>
+
+Commit:
+> git commit -m "<COMMIT MESSAGE>"
+
+Push:
+> git push
+
+### Branches:
+List branches:
+> git branch
+
 
 ## Installs from scratch:
 ## Neofetch + screenFetch
