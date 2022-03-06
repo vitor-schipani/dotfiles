@@ -47,6 +47,11 @@ List branches:
 
 
 ## Installs from scratch:
+## Libreoffice
+sudo add-apt-repository ppa:libreoffice/ppa
+sudo apt install libreoffice
+* Source: https://tecadmin.net/install-libreoffice-on-ubuntu-20-04/
+
 ## Neofetch + screenFetch
 Just to show distro info in a pretty way :)
 > sudo apt install neofetch
