@@ -181,3 +181,6 @@ exec_always feh --bg-scale /home/vls/Pictures/wallpaper.jpg
 bindsym $mod+Shift+x exec i3lock
 #conda activate
 #wal -i ~/Pictures/wallpaper.jpgb
+#
+gaps inner 10
+gaps outer 25
