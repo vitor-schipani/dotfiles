@@ -43,7 +43,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -51,7 +51,7 @@ if [ -n "$force_color_prompt" ]; then
 	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
 	# a case would tend to support setf rather than setaf.)
 	color_prompt=yes
-    else
+   else
 	color_prompt=
     fi
 fi
@@ -59,9 +59,11 @@ fi
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
+ 
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
+
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -133,3 +135,39 @@ unset __conda_setup
 
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+
+
+#Custom
+alias edit_readme='vi ~/dotfiles/README.md'
+alias edit_i3='vi ~/dotfiles/stow_home/i3/.config/i3/config'
+alias edit_i3bar='vi ~/dotfiles/stow_home/i3/polybar_config'
+alias edit_bash='vi ~/dotfiles/stow_home/bash/.bashrc'
+alias edit_nvim='vi ~/dotfiles/stow_home/nvim/.config/nvim/init.vim'
+
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+# Not supported in the "fish" shell.
+(cat ~/.cache/wal/sequences &)
+
+# Alternative (blocks terminal for 0-3ms)
+cat ~/.cache/wal/sequences
+
+# To add support for TTYs this line can be optionally added.
+source ~/.cache/wal/colors-tty.sh
+
+if [ -n "$WINDOWID" ]; then
+    TRANSPARENCY_HEX=$(printf 0x%x $((0xffffffff * 70 / 100)))
+    xprop -id "$WINDOWID" -f _NET_WM_WINDOW_OPACITY 32c -set _NET_WM_WINDOW_OPACITY "$TRANSPARENCY_HEX"
+fi
+
+#Fuzzy finder
+alias f='vi $(fzf --height 60%)' #Open with vim
+
+source /usr/share/doc/fzf/examples/key-bindings.bash
+. "$HOME/.cargo/env"
+
+# GO
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export GOBIN=$GOPATH/bin

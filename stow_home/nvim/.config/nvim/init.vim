@@ -29,6 +29,9 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 
+"Required for colorizer plugin
+set termguicolors
+
 "Plugs
 call plug#begin('~/.vim/plugged')
 
@@ -41,6 +44,8 @@ Plug 'vim-utils/vim-man'
 Plug 'lyuts/vim-rtags'
 Plug 'git@github.com:kien/ctrlp.vim.git'
 Plug 'git@github.com:Valloric/YouCompleteMe.git'
+"Plug 'darrikonn/vim-gofmt'
+Plug 'fatih/vim-go'
 Plug 'mbbill/undotree'
 "File Navigation
 Plug 'sharkdp/bat'
@@ -54,12 +59,21 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 "Debugging
 Plug 'puremourning/vimspector'
 Plug 'szw/vim-maximizer'
+
+Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
+lua require'colorizer'.setup()
+
 "Colorscheme
-"colorscheme gruvbox
-"highlight Normal guibg=none
-"set background=dark
+augroup user_colors
+  autocmd!
+  autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
+augroup END
+
+colorscheme gruvbox
+highlight Normal guibg=none
+set background=dark
 
 "Remaps
 let mapleader = " " "space is the leader key
