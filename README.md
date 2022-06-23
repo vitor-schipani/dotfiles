@@ -31,9 +31,22 @@ tmux kill-session -t "SESSION NAME" #kills that specific session
 tmux rename-session -t "CURRENT NAME" "NEW NAME"
 
 ### Inside tmux
+#### Exiting
 exit #kills the session
 <ctrl+b> + d #exits the session without killing it
 
+#### Creating new window
+<ctrl+b> + c #creates new tmux window in the session
+<ctrl+b> + <NUMBER> #moves to the correspondent window
+<ctrl+b> + w #list all windows and gives a preview
+<ctrl+b> + x #kills the window
+
+#### Dividing the windows (panels)
+<ctrl+b> + % #Divides vertically
+<ctrl+b> + " #Divides horizontally
+<ctrl+b> + ; #Goes back to previous window
+<ctrl+b> + q #Goes to a specific panel
+<ctrl+b> + <ARROWS> #Moves to a window
 
 ## Managing fonts:
 Get currently installed fonts:
@@ -191,3 +204,7 @@ For example "DP-0" for Display Port 0
 
 Example of command:
 > xrandr --verbose --output DP-0 --rotate left
+
+## htop:
+Program to see active processes and programs running
+>sudo apt install htop
