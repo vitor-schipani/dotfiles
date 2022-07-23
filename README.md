@@ -137,6 +137,16 @@ Run .install.py, you may need to run some git commands (the program tells you)
 > let g:python3_host_prog = '/path/to/python3'
 
 * Source: https://neovim.io/doc/user/provider.html#provider-python
+* https://stackoverflow.com/questions/47667119/ycm-error-the-ycmd-server-shut-down-restart-wit-the-instructions-in-the-docu
+
+#### Updating neovim
+https://medium.com/@leonardormlins/easiest-way-to-update-neovim-on-ubuntu-a283c66d5322
+
+$ sudo apt remove neovim -y
+$ sudo add-apt-repository ppa:neovim-ppa/stable
+$ sudo apt-get update
+$ sudo apt-get install neovim
+
 
 ## Stow:
 Stow is used to sync many config files in an easy way

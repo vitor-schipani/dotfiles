@@ -37,23 +37,25 @@ call plug#begin('~/.vim/plugged')
 
 "Color Scheme
 Plug 'morhetz/gruvbox'
+
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-utils/vim-man'
 Plug 'lyuts/vim-rtags'
 Plug 'git@github.com:kien/ctrlp.vim.git'
+
+"Auto completion
 Plug 'git@github.com:Valloric/YouCompleteMe.git'
-"Plug 'darrikonn/vim-gofmt'
 Plug 'fatih/vim-go'
 Plug 'mbbill/undotree'
+
 "File Navigation
 Plug 'sharkdp/bat'
 Plug 'sharkdp/fd'
 Plug 'BurntSushi/ripgrep'
-"Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/plenary.nvim' "plenary is a required dependency for telescope
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 "Debugging

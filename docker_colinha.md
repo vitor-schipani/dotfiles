@@ -30,6 +30,20 @@ executes all instructions.
 
 Leave all "heavy" steps (not likely to change too often) first.
 
+##Multi-stage dockerfiles
+See chapter 4 multistage docker files.
+Each stage starts with a FROM instruction and can be given a name.
+Example: FROM diamol/base AS build-stage
+The last stage is not named.
+
+The stages run independently from each other and each stage can only use
+files from the previous stage if you explicitly copy it to the new stage.
+
+Important: Each stage HAS ITS OWN CACHE! For this reason if you write a stage
+that installs dependencies and another stage that copies files, you can change
+the dependencies (which will break the cache and prompt a redownload of
+dependencies) but will still use the cache for the subsequent stages.
+
 
 #Getting help:
 Best way to check for commands:
@@ -40,7 +54,8 @@ docker run --help
 #Important docker image commands:
 docker image pull
 docker image build
-    --tag: name of the image, this is called by docker container run <img_tag>
+    Example: docker image build -t multi-stage .
+    --tag OR -t: name of the image, this is called by docker container run <img_tag>
 
 #Important docker container commands:
 docker container ls: displays all alive containers. Add "--all" if you want to
@@ -76,7 +91,11 @@ Example: COPY app.js .
 CMD: Runs a command
 Example: ["node", "/web-ping/app.js"]
 
-#Chapter 3: Basic docker file
+RUN: Runs a command during the image build process.
+Example: RUN echo 'Building...' > /build.txt
+
+#Examples of docker files:
+##Chapter 3: Basic docker file
 FROM diamol/node
 ENV TARGET
 ENV METHOD="HEAD"
@@ -84,3 +103,14 @@ ENV INTERVAL="3000"
 WORKDIR /web-ping
 COPY app.js .
 CMD ["node", "/web-ping/app.js"]
+
+##Chapter 4: Multi-stage docker file
+FROM diamol/base AS build-stage
+RUN echo 'Building...' > /build.txt
+
+FROM diamol/base AS test-stage
+RUN echo 'Testing...' >> /build.txt
+
+FROM diamol/base
+COPY --from=test-stage /build.txt /build.txt
+CMD cat /build.txt
