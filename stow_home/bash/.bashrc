@@ -143,6 +143,7 @@ alias edit_i3='vi ~/dotfiles/stow_home/i3/.config/i3/config'
 alias edit_i3bar='vi ~/dotfiles/stow_home/i3/polybar_config'
 alias edit_bash='vi ~/dotfiles/stow_home/bash/.bashrc'
 alias edit_nvim='vi ~/dotfiles/stow_home/nvim/.config/nvim/init.vim'
+alias intellij='/home/vitorls/Documents/idea-IC-221.6008.13/bin/idea.sh'
 
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
