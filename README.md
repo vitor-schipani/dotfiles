@@ -15,6 +15,16 @@ $ edit_nvim         #editing nvim configs
 Lets have a convention that programs should be installed at /usr/local/share/
 > https://frameboxxindore.com/apple/where-should-i-install-applications-in-linux.html
 
+## HOW TO UNPACK TAR GZ
+Unpack everything to current directory and print output
+$ tar -xvf filename.tar.gz
+
+options meaning:
+x: extract (not sure what other options there are)
+v: verbose (print output)
+f: use archive file name when extarcting (dont specify a new name)
+
+> https://kinsta.com/knowledgebase/unzip-tar-gz/
 
 ## Tmux commands
 ### Outside tmux (normal terminal)
