@@ -144,6 +144,9 @@ alias edit_i3bar='vi ~/dotfiles/stow_home/i3/polybar_config'
 alias edit_bash='vi ~/dotfiles/stow_home/bash/.bashrc'
 alias edit_nvim='vi ~/dotfiles/stow_home/nvim/.config/nvim/init.vim'
 
+alias colinha_docker='vi ~/dotfiles/colinha_docker.md'
+alias colinha_java='vi ~/dotfiles/colinha_java.md'
+
 alias intellij='/home/vitorls/Documents/idea-IC-221.6008.13/bin/idea.sh'
 alias android_studio='/usr/local/share/android-studio/bin/studio.sh'
 
