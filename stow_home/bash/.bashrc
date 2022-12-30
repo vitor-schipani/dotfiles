@@ -120,17 +120,17 @@ fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/vitorls/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/vitorls/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/vitorls/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/vitorls/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+#__conda_setup="$('/home/vitorls/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/home/vitorls/miniconda3/etc/profile.d/conda.sh" ]; then
+#        . "/home/vitorls/miniconda3/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/home/vitorls/miniconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
 # <<< conda initialize <<<
 
 alias pbcopy='xclip -selection clipboard'
@@ -138,6 +138,8 @@ alias pbpaste='xclip -selection clipboard -o'
 
 
 #Custom
+alias echo_path='echo $PATH | sed $"s/:/\n/g"'
+
 alias edit_readme='vi ~/dotfiles/README.md'
 alias edit_i3='vi ~/dotfiles/stow_home/i3/.config/i3/config'
 alias edit_i3bar='vi ~/dotfiles/stow_home/i3/polybar_config'
@@ -147,8 +149,9 @@ alias edit_nvim='vi ~/dotfiles/stow_home/nvim/.config/nvim/init.vim'
 alias colinha_docker='vi ~/dotfiles/colinha_docker.md'
 alias colinha_java='vi ~/dotfiles/colinha_java.md'
 
-alias intellij='/home/vitorls/Documents/idea-IC-221.6008.13/bin/idea.sh'
+alias intellij='/usr/local/share/idea-IC-221.6008.13/bin/idea.sh'
 alias android_studio='/usr/local/share/android-studio/bin/studio.sh'
+alias pycharm='/usr/local/share/pycharm-community-2022.2.4/bin/pycharm.sh'
 
 
 # Import colorscheme from 'wal' asynchronously
@@ -175,6 +178,12 @@ source /usr/share/doc/fzf/examples/key-bindings.bash
 . "$HOME/.cargo/env"
 
 # GO
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-export GOBIN=$GOPATH/bin
+#export GOPATH=$HOME/go
+#export PATH=$PATH:$GOPATH/bin
+#export GOBIN=$GOPATH/bin
+
+# Pycharm
+#export PATH=$PATH:/usr/local/share/pycharm-community-2022.2.4/bin
+
+# Intellij
+#export PATH=$PATH:/usr/local/share/intellij/bin

@@ -6,10 +6,15 @@ $ git clone git@github.com:vitor-schipani/dotfiles.git
 ### Configuring different dotfiles:
 alias were set in the .bashrc config file
 Those are the alias for quick access:
+$ echo_path         #Pretty printing available PATH environment variable
+
 $ edit_i3           #editing i3 as a whole
 $ edit_i3bar        #editing the little status bar
 $ edit_bash         #editing .bashrc configs such as alias settings
 $ edit_nvim         #editing nvim configs
+
+$ colinha_docker    #docker study
+$ colinha_java      $java study
 
 ## WHERE TO INSTALL PROGRAMS IN LINUX
 Lets have a convention that programs should be installed at /usr/local/share/
@@ -75,50 +80,6 @@ $ pango-list #gives a list of all installed fonts
 After installing new terminal application:
 $ sudo update-alternatives --config x-terminal-emulator
 Choose from the list
-
-
-## Git help:
-Good reference:
-> https://leosiddle.com/posts/2020/07/git-config-pull-rebase-autostash/
-
-### Configs and meta git commands:
-Set git configurations:
-$ git config
-Set git configurations globally:
-$ git config --global
-
-Obtain logs:
-Complete log:
-$ git log
-Summary log:
-$ git reflog
-
-### Remotes:
-Views all current remotes:
-$ git remote -v #Views all current remotes
-Adds a new remote:
-$ git remote add origin <GET SSH LINK FROM GIT>
-
-### Commiting:
-Sync with remote repo:
-$ git pull
-
-Get status of staged changes:
-$ git status
-
-Add files:
-$ git add <FILES>
-
-Commit:
-$ git commit -m "<COMMIT MESSAGE>"
-
-Push:
-$ git push
-
-### Branches:
-List branches:
-$ git branch
-
 
 ## Installs from scratch:
 ## Libreoffice

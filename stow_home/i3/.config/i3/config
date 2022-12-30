@@ -1,6 +1,6 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 #
-#Dont remove this lol
+#Dont remove this lol -- it makes windows key the modifier key
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
