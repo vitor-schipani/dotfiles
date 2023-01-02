@@ -57,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
 else
  
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
@@ -148,8 +148,11 @@ alias edit_nvim='vi ~/dotfiles/stow_home/nvim/.config/nvim/init.vim'
 
 alias colinha_docker='vi ~/dotfiles/colinha_docker.md'
 alias colinha_java='vi ~/dotfiles/colinha_java.md'
+alias colinha_c='vi ~/dotfiles/colinha_c.md'
+alias colinha_os='vi ~/dotfiles/colinha_os.md'
+alias colinha_kotlin='vi ~/dotfiles/colinha_kotlin.md'
 
-alias intellij='/usr/local/share/idea-IC-221.6008.13/bin/idea.sh'
+alias intellij='/usr/local/share/intellij/bin/idea.sh'
 alias android_studio='/usr/local/share/android-studio/bin/studio.sh'
 alias pycharm='/usr/local/share/pycharm-community-2022.2.4/bin/pycharm.sh'
 
