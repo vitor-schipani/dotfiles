@@ -8,19 +8,30 @@
 alias were set in the .bashrc config file
 Those are the alias for quick access:
 
-> echo_path         #Pretty printing available PATH environment variable
 
-> edit_i3           #editing i3 as a whole
+Pretty printing available PATH environment variable:
 
-> edit_i3bar        #editing the little status bar
+> echo_path         
 
-> edit_bash         #editing .bashrc configs such as alias settings
+Editing i3 as a whole
 
-> edit_nvim         #editing nvim configs
+> edit_i3          
 
-> colinha_docker    #docker study
+Editing the status bar:
 
-> colinha_java      #java study
+> edit_i3bar        
+
+Editing .bashrc configs sucha as alias settings:
+
+> edit_bash         
+
+Editing nvim configs:
+
+> edit_nvim         
+
+Study files (many files, constantly evolving):
+
+> colinha_...
 
 ## WHERE TO INSTALL PROGRAMS IN LINUX
 Lets have a convention that programs should be installed at /usr/local/share/
@@ -93,11 +104,11 @@ Kills that specific session:
 
 Kills the session:
 
-exit 
+> exit 
 
 Exits the session without killing it:
 
-<ctrl+b> + d 
+> <ctrl+b> + d 
 
 #### Creating new window
 
@@ -121,23 +132,23 @@ Kills the window:
 
 Divides Vertically:
 
-<ctrl+b> + % 
+> <ctrl+b> + % 
 
 Divides horizontally:
 
-<ctrl+b> + " 
+> <ctrl+b> + " 
 
 Goes back to previous window:
 
-<ctrl+b> + ; 
+> <ctrl+b> + ; 
 
 Goes to a specific panel:
 
-<ctrl+b> + q 
+> <ctrl+b> + q 
 
 Moves to a window:
 
-<ctrl+b> + <ARROWS> 
+> <ctrl+b> + <ARROWS> 
 
 ## Managing fonts:
 
