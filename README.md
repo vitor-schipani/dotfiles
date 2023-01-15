@@ -1,10 +1,10 @@
 # Vitor's Repo for syncing up config files using GNU Stow
-## Regenerate config files:
+## Regenerate config files
 > cd ~
 
 > git clone git@github.com:vitor-schipani/dotfiles.git
 
-### Configuring different dotfiles:
+### Configuring different dotfiles
 alias were set in the .bashrc config file
 Those are the alias for quick access:
 
@@ -61,7 +61,7 @@ Source: https://kinsta.com/knowledgebase/unzip-tar-gz/
 
 Opens a new tmux session:
 
-> tmux #opens a new tmux session
+> tmux 
 
 Lists all running sessions:
 
@@ -71,7 +71,7 @@ Lists all running sessions:
 
 Creates a new tmux session:
 
-> tmux new #creates a new tmux session
+> tmux new 
 
 Creates a new tmux session with a name:
 
@@ -81,7 +81,7 @@ Creates a new tmux session with a name:
 
 Re-attach to the last tmux session you were in:
 
-> tmux a #re-attach to the last tmux session you were in
+> tmux a 
 
 Attach the terminal to a target tmux session:
 
@@ -160,9 +160,13 @@ Get currently installed fonts:
 
 > cd ~/.fonts
 
-> sudo fc-cache -fv #Refresh cache
+Refresh cache:
 
-> pango-list #gives a list of all installed fonts
+> sudo fc-cache -fv 
+
+Gives a list of all installed fonts:
+
+> pango-list 
 
 ## Changing default terminal
 
@@ -172,7 +176,7 @@ After installing new terminal application:
 
 Choose from the list
 
-## Installs from scratch:
+## Installs from scratch
 ## Libreoffice
 
 Source: https://tecadmin.net/install-libreoffice-on-ubuntu-20-04/
@@ -212,7 +216,7 @@ Source: https://medium.com/@leonardormlins/easiest-way-to-update-neovim-on-ubunt
 
 Install Plugged: 
 
-> https://opensource.com/article/20/2/how-install-vim-plugins
+Source: https://opensource.com/article/20/2/how-install-vim-plugins
 
 > curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -233,7 +237,7 @@ If you need to uninstall delete the plugin directory and run
 
 > :PlugClean
 
-#### Step 3 (YouCompleteMe and other plugins requiring Python):
+#### Step 3 (YouCompleteMe and other plugins requiring Python)
 Run .install.py, you may need to run some git commands (the program tells you)
 
 Source: https://neovim.io/doc/user/provider.html#provider-python
@@ -244,17 +248,17 @@ Source: https://stackoverflow.com/questions/47667119/ycm-error-the-ycmd-server-s
 
 > let g:python3_host_prog = '/path/to/python3'
 
-## Stow:
+## Stow
 
 Stow is used to sync many config files in an easy way
 
-#### Step 1 (installation):
+#### Step 1 (installation)
 
 > sudo apt-get update -y
 
 > sudo apt-get install -y stow
 
-#### Step 2 (syncing commands):
+#### Step 2 (syncing commands)
 
 Source: https://linustechtips.com/topic/1369746-howto-backup-your-configuration-files-dotfiles-in-linux-using-stow-and-git/
 
@@ -274,13 +278,13 @@ If it looks right (creates the correct symlinks) you can remove the "n":
 
 > stow -vt ~ *
 
-## Miniconda:
+## Miniconda
 
 To have easy multi python environments.
 
 Sorry, check here install instructions: https://docs.conda.io/en/latest/miniconda.html
 
-## i3:
+## i3
 
 See edit_i3 for full config file.
 
@@ -306,19 +310,19 @@ polybar setup wiki:
 
 https://github.com/polybar/polybar/wiki
 
-## fzf:
+## fzf
 
 Fuzzy finder for commandline
 
 Source: https://bytexd.com/how-to-use-fzf-command-line-fuzzy-finder/
 
-## Ranger:
+## Ranger
 
 File explorer, not super required but it is quite nice
 
 > sudo apt install ranger
 
-## feh:
+## feh
 
 Used to change wallpapers
 
@@ -330,11 +334,11 @@ So if you want to change your wallpaper just rename a picture on the
 
 pictures directory to 'current_wallpaper.jpg' and reload i3 :)
 
-## xrandr:
+## xrandr
 
 This is a program to configure monitors orientation, resolution, refresh_rate etc.
 
-### Persisting xrandr changes:
+### Persisting xrandr changes
 
 Commands must be placed in this file to persist on startup:
 
@@ -352,7 +356,7 @@ Example of command:
 
 > xrandr --verbose --output DP-0 --rotate left
 
-## htop:
+## htop
 Program to see active processes and programs running
 
 > sudo apt install htop
