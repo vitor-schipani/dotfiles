@@ -1,8 +1,19 @@
 # Vitor's Repo for syncing up config files using GNU Stow
 ## Regenerate config files
+
 > cd ~
 
 > git clone git@github.com:vitor-schipani/dotfiles.git
+
+## Copying and pasting from one terminal to another
+In Vim type to yank:
+
+> "+y
+
+To paste on another terminal:
+
+> "+p
+
 
 ### Configuring different dotfiles
 alias were set in the .bashrc config file
@@ -55,119 +66,6 @@ f: use archive file name when extarcting (dont specify a new name)
 
 Source: https://kinsta.com/knowledgebase/unzip-tar-gz/
 
-## Tmux commands
-### Outside tmux (normal terminal)
-#### Managing tmux
-
-Opens a new tmux session:
-
-> tmux 
-
-Lists all running sessions:
-
-> tmux ls 
-
-#### Create new tmux session
-
-Creates a new tmux session:
-
-> tmux new 
-
-Creates a new tmux session with a name:
-
-> tmux new -s "SESSION NAME"
-
-#### Re-attach to an existing session
-
-Re-attach to the last tmux session you were in:
-
-> tmux a 
-
-Attach the terminal to a target tmux session:
-
-> tmux a -t "SESSION NAME" 
-
-#### Killing sessions and renaming sessions
-
-Kills all sessions:
-
-> tmux kill-server
-
-Kills that specific session:
-
-> tmux kill-session -t "SESSION NAME"
-
-> tmux rename-session -t "CURRENT NAME" "NEW NAME"
-
-### Inside tmux
-#### Exiting
-
-Kills the session:
-
-> exit 
-
-Exits the session without killing it:
-
-> <ctrl+b> + d 
-
-#### Creating new window
-
-Creates the new tmux window in the session:
-
-> <ctrl+b> + c 
-
-Moves to the correspondent window:
-
-> <ctrl+b> + <NUMBER> 
-
-List all windows and gives a preview:
-
-> <ctrl+b> + w 
-
-Kills the window:
-
-> <ctrl+b> + x 
-
-#### Dividing the windows (panels)
-
-Divides Vertically:
-
-> <ctrl+b> + % 
-
-Divides horizontally:
-
-> <ctrl+b> + " 
-
-Goes back to previous window:
-
-> <ctrl+b> + ; 
-
-Goes to a specific panel:
-
-> <ctrl+b> + q 
-
-Moves to a window:
-
-> <ctrl+b> + <ARROWS> 
-
-## Managing fonts:
-
-Get currently installed fonts:
-
-> fc-list
-
-> cp *.ttf ~/.fonts #Copy *.ttf or *.woff to fonts folder
-
-> cd ~/.fonts
-
-Refresh cache:
-
-> sudo fc-cache -fv 
-
-Gives a list of all installed fonts:
-
-> pango-list 
-
 ## Changing default terminal
 
 After installing new terminal application:
@@ -177,6 +75,45 @@ After installing new terminal application:
 Choose from the list
 
 ## Installs from scratch
+
+## Brave Browser
+
+For updated instructions see:
+https://brave.com/linux/
+
+If scaling is f-ed up then go into settings and 
+disable hardware acceleration!
+
+## Stow
+
+Stow is used to sync many config files in an easy way
+
+#### Step 1 (installation)
+
+> sudo apt-get update -y
+
+> sudo apt-get install -y stow
+
+#### Step 2 (syncing commands)
+
+Source: https://linustechtips.com/topic/1369746-howto-backup-your-configuration-files-dotfiles-in-linux-using-stow-and-git/
+
+Stow exists in: ~/dotfiles/stow_home/
+
+Inside stow_home every dotfile to be synced need to have its own folder:
+
+~/dotfiles/stow_home/<PROGRAM>
+
+Then navigate to stow_home and use the following command:
+
+> stow -nvt ~ *
+
+The "n" flag will only show what will be done, without actually doing it.
+
+If it looks right (creates the correct symlinks) you can remove the "n":
+
+> stow -vt ~ *
+
 ## Libreoffice
 
 Source: https://tecadmin.net/install-libreoffice-on-ubuntu-20-04/
@@ -218,7 +155,12 @@ Install Plugged:
 
 Source: https://opensource.com/article/20/2/how-install-vim-plugins
 
-> curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+Follow the instructions for this link:
+
+https://github.com/junegunn/vim-plug
+
+> sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 Neovim plugins installation path: ~/.vim/plugged/
 Neovim config file path: nvim/.config/nvim/init.vim
@@ -226,7 +168,7 @@ Neovim config file path: nvim/.config/nvim/init.vim
 When you alter your init.vim you must source this file for it to recognize changes
 Sourcing the vimrc:
 
-> :source $MYVIMRC
+> :source <YOUR VIM FILE HERE> 
 
 Installing plugins:
 
@@ -238,6 +180,12 @@ If you need to uninstall delete the plugin directory and run
 > :PlugClean
 
 #### Step 3 (YouCompleteMe and other plugins requiring Python)
+For this step you may need to install a few programs first:
+Official instructions:
+https://github.com/ycm-core/YouCompleteMe#linux-64-bit
+
+> sudo apt install build-essential cmake vim-nox python3-dev
+
 Run .install.py, you may need to run some git commands (the program tells you)
 
 Source: https://neovim.io/doc/user/provider.html#provider-python
@@ -248,35 +196,6 @@ Source: https://stackoverflow.com/questions/47667119/ycm-error-the-ycmd-server-s
 
 > let g:python3_host_prog = '/path/to/python3'
 
-## Stow
-
-Stow is used to sync many config files in an easy way
-
-#### Step 1 (installation)
-
-> sudo apt-get update -y
-
-> sudo apt-get install -y stow
-
-#### Step 2 (syncing commands)
-
-Source: https://linustechtips.com/topic/1369746-howto-backup-your-configuration-files-dotfiles-in-linux-using-stow-and-git/
-
-Stow exists in: ~/dotfiles/stow_home/
-
-Inside stow_home every dotfile to be synced need to have its own folder:
-
-~/dotfiles/stow_home/<PROGRAM>
-
-Then navigate to stow_home and use the following command:
-
-> stow -nvt ~ *
-
-The "n" flag will only show what will be done, without actually doing it.
-
-If it looks right (creates the correct symlinks) you can remove the "n":
-
-> stow -vt ~ *
 
 ## Miniconda
 
@@ -285,6 +204,11 @@ To have easy multi python environments.
 Sorry, check here install instructions: https://docs.conda.io/en/latest/miniconda.html
 
 ## i3
+
+Install i3 via the package manager.
+i3-gaps is discontinued, so just install i3 itself:
+
+> sudo apt get install i3-wm
 
 See edit_i3 for full config file.
 
@@ -313,6 +237,8 @@ https://github.com/polybar/polybar/wiki
 ## fzf
 
 Fuzzy finder for commandline
+
+> sudo apt install fzf
 
 Source: https://bytexd.com/how-to-use-fzf-command-line-fuzzy-finder/
 

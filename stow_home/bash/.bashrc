@@ -138,11 +138,13 @@ alias pbpaste='xclip -selection clipboard -o'
 
 
 #Custom
+alias vi='nvim'
+
 alias echo_path='echo $PATH | sed $"s/:/\n/g"'
 
 alias edit_readme='vi ~/dotfiles/README.md'
 alias edit_i3='vi ~/dotfiles/stow_home/i3/.config/i3/config'
-alias edit_i3bar='vi ~/dotfiles/stow_home/i3/polybar_config'
+alias edit_i3bar='vi ~/.config/i3/i3status.conf'
 alias edit_bash='vi ~/dotfiles/stow_home/bash/.bashrc'
 alias edit_nvim='vi ~/dotfiles/stow_home/nvim/.config/nvim/init.vim'
 
@@ -161,13 +163,13 @@ alias pycharm='/usr/local/share/pycharm-community-2022.2.4/bin/pycharm.sh'
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
 # Not supported in the "fish" shell.
-(cat ~/.cache/wal/sequences &)
+#(cat ~/.cache/wal/sequences &)
 
 # Alternative (blocks terminal for 0-3ms)
-cat ~/.cache/wal/sequences
+#cat ~/.cache/wal/sequences
 
 # To add support for TTYs this line can be optionally added.
-source ~/.cache/wal/colors-tty.sh
+#source ~/.cache/wal/colors-tty.sh
 
 if [ -n "$WINDOWID" ]; then
     TRANSPARENCY_HEX=$(printf 0x%x $((0xffffffff * 70 / 100)))
@@ -178,7 +180,7 @@ fi
 alias f='vi $(fzf --height 60%)' #Open with vim
 
 source /usr/share/doc/fzf/examples/key-bindings.bash
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"
 
 # GO
 #export GOPATH=$HOME/go
