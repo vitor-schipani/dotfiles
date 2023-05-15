@@ -32,6 +32,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 #bindsym XF86AudioStop exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 #bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 
+#Use xbacklight to control the backlight
+bindsym XF86MonBrightnessUp exec ./dotfiles/stow_home/i3/brightness.sh up
+bindsym XF86MonBrightnessDown exec ./dotfiles/stow_home/i3/brightness.sh down
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -179,6 +183,8 @@ bar {
 }
 
 # CUSTOM
+#exec --no-startup-id "export LC_TIME=it_IT.UTF-8"
+
 exec_always feh --bg-scale /home/vls/Pictures/wallpaper.jpg 
 bindsym $mod+Shift+x exec i3lock
 #conda activate

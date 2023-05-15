@@ -5,6 +5,29 @@
 
 > git clone git@github.com:vitor-schipani/dotfiles.git
 
+## Changing timezone
+
+Check your timezone first:
+> timedatectl show --property=Timezone --value
+
+Then set it appropriately:
+> sudo timedatectl set-timezone Europe/Paris
+
+Or
+> sudo timedatectl set-timezone America/Sao_Paulo
+
+
+## Changing idiom of keyboard
+
+Find the correct layout:
+> localectl list-x11-keymap-layouts
+
+For BR for example type:
+> setxkbmap br
+
+To make this persist on restart be sure to
+add it to .bashrc
+
 ## Copying and pasting from one terminal to another
 In Vim type to yank:
 

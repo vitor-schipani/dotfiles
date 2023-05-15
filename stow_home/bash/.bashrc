@@ -147,6 +147,7 @@ alias edit_i3='vi ~/dotfiles/stow_home/i3/.config/i3/config'
 alias edit_i3bar='vi ~/.config/i3/i3status.conf'
 alias edit_bash='vi ~/dotfiles/stow_home/bash/.bashrc'
 alias edit_nvim='vi ~/dotfiles/stow_home/nvim/.config/nvim/init.vim'
+alias edit_key_remaps='vi ~/dotfiles/stow_home/myremap.xmodmap'
 
 alias colinha_docker='vi ~/dotfiles/colinha_docker.md'
 alias colinha_java='vi ~/dotfiles/colinha_java.md'
@@ -181,6 +182,12 @@ alias f='vi $(fzf --height 60%)' #Open with vim
 
 source /usr/share/doc/fzf/examples/key-bindings.bash
 #. "$HOME/.cargo/env"
+
+# Set keyboard
+setxkbmap br
+
+# Set Right CTRL for thinkpad
+xmodmap ~/dotfiles/stow_home/myremap.xmodmap
 
 # GO
 #export GOPATH=$HOME/go
