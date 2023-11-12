@@ -25,6 +25,9 @@ Find the correct layout:
 For BR for example type:
 > setxkbmap br
 
+For US for example type:
+> setxkbmap us
+
 To make this persist on restart be sure to
 add it to .bashrc
 
@@ -37,6 +40,8 @@ To paste on another terminal:
 
 > "+p
 
+## Replace all instances in nvim
+:%s/searchString/replacementString
 
 ### Configuring different dotfiles
 alias were set in the .bashrc config file
@@ -106,6 +111,13 @@ https://brave.com/linux/
 
 If scaling is f-ed up then go into settings and 
 disable hardware acceleration!
+
+## egpu-switcher
+
+Used for enabling the e-gpu.
+Follow instructions here:
+
+https://github.com/hertg/egpu-switcher
 
 ## Stow
 

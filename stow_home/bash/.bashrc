@@ -149,6 +149,9 @@ alias edit_bash='vi ~/dotfiles/stow_home/bash/.bashrc'
 alias edit_nvim='vi ~/dotfiles/stow_home/nvim/.config/nvim/init.vim'
 alias edit_key_remaps='vi ~/dotfiles/stow_home/myremap.xmodmap'
 
+alias set_br='setxkbmap br'
+alias set_us='setxkbmap us'
+
 alias colinha_docker='vi ~/dotfiles/colinha_docker.md'
 alias colinha_java='vi ~/dotfiles/colinha_java.md'
 alias colinha_c='vi ~/dotfiles/colinha_c.md'
@@ -184,7 +187,7 @@ source /usr/share/doc/fzf/examples/key-bindings.bash
 #. "$HOME/.cargo/env"
 
 # Set keyboard
-setxkbmap br
+setxkbmap us
 
 # Set Right CTRL for thinkpad
 xmodmap ~/dotfiles/stow_home/myremap.xmodmap
