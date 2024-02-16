@@ -157,10 +157,12 @@ alias colinha_java='vi ~/dotfiles/colinha_java.md'
 alias colinha_c='vi ~/dotfiles/colinha_c.md'
 alias colinha_os='vi ~/dotfiles/colinha_os.md'
 alias colinha_kotlin='vi ~/dotfiles/colinha_kotlin.md'
+alias colinha_go='vi ~/dotfiles/colinha_go.md'
 
-alias intellij='/usr/local/share/intellij/bin/idea.sh'
-alias android_studio='/usr/local/share/android-studio/bin/studio.sh'
-alias pycharm='/usr/local/share/pycharm-community-2022.2.4/bin/pycharm.sh'
+alias program_intellij='/usr/local/share/intellij/bin/idea.sh'
+alias program_android_studio='/usr/local/share/android-studio/bin/studio.sh'
+alias program_pycharm='/usr/local/share/pycharm-2023.3.2/bin/pycharm.sh'
+alias program_goland='goland.sh'
 
 
 # Import colorscheme from 'wal' asynchronously
@@ -193,6 +195,8 @@ setxkbmap us
 xmodmap ~/dotfiles/stow_home/myremap.xmodmap
 
 # GO
+export PATH="$PATH:/usr/local/GoLand-2023.2.5/bin"
+#export PATH="$PATH:/usr/local/go/bin" # We will configure it through Goland
 #export GOPATH=$HOME/go
 #export PATH=$PATH:$GOPATH/bin
 #export GOBIN=$GOPATH/bin
